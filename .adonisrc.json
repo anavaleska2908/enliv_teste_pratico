@@ -25,6 +25,9 @@
   "aceProviders": [
     "@adonisjs/repl"
   ],
+  "namespaces": {
+    "httpControllers": "App/Controllers"
+  },
   "tests": {
     "suites": [
       {
