@@ -40,5 +40,7 @@ Server.middleware.register([
 | Route.get('dashboard', 'UserController.dashboard').middleware('auth')
 |
 */
-// Server.middleware.registerNamed({
-// })
+  Server.middleware.registerNamed({
+    ifTaskExists: () => import('App/Middleware/IfTaskExistsMiddleware'),
+    validateFields: () => import('App/Middleware/ValidateFieldsMiddleware')
+  });

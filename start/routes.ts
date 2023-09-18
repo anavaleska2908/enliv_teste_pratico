@@ -20,8 +20,8 @@
 
 import Route from '@ioc:Adonis/Core/Route';
 
-Route.get('/tasks', 'TasksController.index');
-Route.post('/tasks', 'TasksController.store');
-Route.get('/tasks/:id', 'TasksController.show');
-Route.patch('/tasks/:id', 'TasksController.update');
-Route.delete('/tasks/:id', 'TasksController.destroy');
+Route.get('/tasks', 'TasksController.index')
+Route.post('/tasks', 'TasksController.store').middleware('validateFields');
+Route.get('/tasks/:id', 'TasksController.show').middleware('ifTaskExists');
+Route.patch('/tasks/:id', 'TasksController.update').middleware(['ifTaskExists', 'validateFields']);
+Route.delete('/tasks/:id', 'TasksController.destroy').middleware('ifTaskExists');
