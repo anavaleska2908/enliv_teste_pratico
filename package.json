@@ -6,7 +6,8 @@
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
     "start": "node server.js",
-    "test": "node ace test"
+    "test": "node ace test",
+    "generate-docs": "node ace swagger:generate"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^5.9.5",
@@ -24,6 +25,7 @@
     "@adonisjs/core": "^5.8.0",
     "@adonisjs/lucid": "^18.4.0",
     "@adonisjs/repl": "^3.1.0",
+    "@adonisjs/view": "^6.2.0",
     "luxon": "^3.4.3",
     "moment": "^2.29.4",
     "pg": "^8.11.3",
